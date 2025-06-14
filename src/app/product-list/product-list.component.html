@@ -1,24 +1,29 @@
 <div class="container">
-  
-<app-category-nav class="header"
-  [activeCategory]="activeCategory"
-  (categorySelected)="filterByCategory($event)">
-</app-category-nav>
-  
+  <div class="header">
+    <div class="cart-info">
+      <div>Total Cart items ({{getSelectedCount()}})
+        <button 
+          class="glitter-btn" 
+          [disabled]="getSelectedCount() === 0" 
+          (click)="checkoutAll()">
+          Checkout
+          <!-- <span class="glitter"></span> -->
+        </button>
+      </div>
+    </div>
+    <app-category-nav [activeCategory]="activeCategory" (categorySelected)="filterByCategory($event)">
+    </app-category-nav>
+  </div>
+
+
   <div class="product-grid">
-    <app-product-item 
-      *ngFor="let product of filteredProducts" 
-      [product]="product"
-      [selectedQuantity]="selectedQuantities[product.id]"
-      (quantityChanged)="onQuantityChange(product.id, $event)">
+    <app-product-item *ngFor="let product of filteredProducts" [product]="product"
+      [selectedQuantity]="selectedQuantities[product.id]" (quantityChanged)="onQuantityChange(product.id, $event)">
     </app-product-item>
   </div>
-  
+
   <div class="checkout-footer">
-    <button 
-      class="checkout-btn" 
-      (click)="checkoutAll()"
-      [disabled]="getSelectedCount() === 0">
+    <button class="checkout-btn" (click)="checkoutAll()" [disabled]="getSelectedCount() === 0">
       Checkout ({{getSelectedCount()}} items)
     </button>
   </div>

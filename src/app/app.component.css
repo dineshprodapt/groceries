@@ -1,10 +1,7 @@
 h3 {
     text-align: center;
 }
-.cart-info {
-    margin: 0 40px;
-    padding-bottom: 10px;
-}
+
 /* Header container */
 header {
   position: sticky;
@@ -39,6 +36,6 @@ main {
   
   main {
     margin-top: 0px;
-    padding: 15px;
+    padding: 5px 15px;
   }
 }

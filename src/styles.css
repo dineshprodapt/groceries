@@ -120,7 +120,7 @@ header h1 {
   font-size: 1.8rem;
 }
 
-.cart-info a {
+.cart-info div {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -131,9 +131,7 @@ header h1 {
   font-weight: 500;
 }
 
-.cart-info a:hover {
-  background-color: #A5D6A7;
-}
+
 @media (max-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -163,7 +161,7 @@ header h1 {
 
 .header {
   position: sticky;
-  top: 80px;
+  top: 27px;
   left: 0;
   right: 0;
   z-index: 1000;

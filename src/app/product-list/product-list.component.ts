@@ -3,6 +3,7 @@ import { ProductsService } from '../products.service';
 import { Product } from '../product.model';
 import { CartService } from '../cart.service';
 import { ProductItemComponent } from '../product-item/product-item.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -20,7 +21,8 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private productsService: ProductsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -72,6 +74,7 @@ export class ProductListComponent implements OnInit {
       const quantity = this.selectedQuantities[product.id];
       if (quantity > 0) {
         this.cartService.addToCart(product, quantity);
+        this.router.navigate(['/cart']);
         this.selectedQuantities[product.id] = 0;
       }
     });
@@ -92,7 +95,10 @@ export class ProductListComponent implements OnInit {
   }
 
   getSelectedCount(): number {
-    return Object.values(this.selectedQuantities).filter(qty => qty > 0).length;
+   // console.log("selectedQuantities", this.selectedQuantities);
+    let cart_quantity = Object.values(this.selectedQuantities).filter(qty => qty > 0).length; 
+    this.cartService.setData(cart_quantity);
+    return cart_quantity;
   }
 
 }

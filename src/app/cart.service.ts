@@ -8,8 +8,19 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
 private cartItems: {product: Product, quantity: number}[] = [];
   private cartSubject = new BehaviorSubject<{product: Product, quantity: number}[]>(this.cartItems);
+  public sharedData = new BehaviorSubject<any>('');
+  currentData = this.sharedData.asObservable();
 
   constructor() { }
+
+   setData(data: any) {
+    this.sharedData.next(data);
+  }
+
+  getData() {
+    return this.sharedData.getValue();
+  }
+
  // Update methods to emit new values
   addToCart(product: Product, quantity: number = 1): void {
     const existingItem = this.cartItems.find(item => item.product.id === product.id);
