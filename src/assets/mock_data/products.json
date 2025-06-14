@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Turmeric Powder",
+    "value": "50gm",
+    "image": "assets/images/turmeric.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 2,
+    "name": "Mustard (Small)",
+    "value": "50gm",
+    "image": "assets/images/mustard_50.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 3,
+    "name": "Mustard (Small)",
+    "value": "100gm",
+    "image": "assets/images/mustard_100.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 4,
+    "name": "Jeeragam",
+    "value": "100gm",
+    "image": "assets/images/jeeragam.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+    {
+    "id": 5,
+    "name": "Red Chilli Powder",
+    "value": "100gm",
+    "image": "assets/images/red_chilli_powder.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+     {
+    "id": 6,
+    "name": "Kashmiri Red Chilli Powder ",
+    "value": "100gm",
+    "image": "assets/images/kashmiri_chilli_powder.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  }
+  
+]

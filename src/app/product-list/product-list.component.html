@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Our Products</h1>
+  
+<app-category-nav 
+  [activeCategory]="activeCategory"
+  (categorySelected)="filterByCategory($event)">
+</app-category-nav>
+  
+  <div class="product-grid">
+    <app-product-item 
+      *ngFor="let product of filteredProducts" 
+      [product]="product"
+      [selectedQuantity]="selectedQuantities[product.id]"
+      (quantityChanged)="onQuantityChange(product.id, $event)">
+    </app-product-item>
+  </div>
+  
+  <div class="checkout-footer">
+    <button 
+      class="checkout-btn" 
+      (click)="checkoutAll()"
+      [disabled]="getSelectedCount() === 0">
+      Checkout ({{getSelectedCount()}} items)
+    </button>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<nav class="category-nav">
+  <ul>
+    <li>
+        <a 
+        (click)="selectCategory('all')"
+        [class.active]="activeCategory === 'all'">
+        All Products
+        </a>    
+    </li>
+    <li>
+     <a 
+        *ngFor="let category of categories"
+        (click)="selectCategory(category)"
+        [class.active]="activeCategory === category">
+        {{category}}
+        </a>
+    </li>
+  </ul>
+</nav>

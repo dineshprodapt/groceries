@@ -1,0 +1,4 @@
+<div *ngIf="visible" @fadeIn class="toast toast-{{type}}">
+  {{message}}
+  <button (click)="hide()">×</button>
+</div>

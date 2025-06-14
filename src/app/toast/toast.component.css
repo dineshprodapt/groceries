@@ -1,0 +1,36 @@
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: var(--border-radius);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+}
+
+.toast button {
+  background: none;
+  color: inherit;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.toast button:hover {
+  opacity: 1;
+}
+
+.toast-success {
+  background-color: var(--primary-color);
+}
+
+.toast-error {
+  background-color: #f44336;
+}
+
+.toast-info {
+  background-color: #2196F3;
+}

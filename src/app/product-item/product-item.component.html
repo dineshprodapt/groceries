@@ -1,0 +1,18 @@
+<div class="product-card">
+  <div class="product-image">
+    <img [src]="product.image" [alt]="product.name">
+  </div>
+  <div class="product-details">
+    <h3>{{product.name}}</h3>
+    <p class="price">{{product.value}}</p>
+    <div class="quantity-selector">
+      <select 
+        [value]="selectedQuantity"
+        (change)="onQuantityChange($event)">
+        <option *ngFor="let qty of quantityOptions" [value]="qty">
+          {{qty === 0 ? 'Select quantity' : qty}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
