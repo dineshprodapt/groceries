@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 101,
     "name": "Turmeric Powder",
     "value": "50gm",
     "image": "assets/images/turmeric.jpg",
@@ -8,7 +8,7 @@
     "maxQuantity": 5
   },
   {
-    "id": 2,
+    "id": 102,
     "name": "Mustard (Small)",
     "value": "50gm",
     "image": "assets/images/mustard_50.jpg",
@@ -16,7 +16,7 @@
     "maxQuantity": 5
   },
   {
-    "id": 3,
+    "id": 103,
     "name": "Mustard (Small)",
     "value": "100gm",
     "image": "assets/images/mustard_100.jpg",
@@ -24,28 +24,283 @@
     "maxQuantity": 5
   },
   {
-    "id": 4,
+    "id": 104,
     "name": "Jeeragam",
     "value": "100gm",
     "image": "assets/images/jeeragam.jpg",
     "category": "Spices",
     "maxQuantity": 5
   },
-    {
-    "id": 5,
+  {
+    "id": 105,
     "name": "Red Chilli Powder",
     "value": "100gm",
     "image": "assets/images/red_chilli_powder.jpg",
     "category": "Spices",
     "maxQuantity": 5
   },
-     {
-    "id": 6,
+  {
+    "id": 106,
     "name": "Kashmiri Red Chilli Powder ",
     "value": "100gm",
     "image": "assets/images/kashmiri_chilli_powder.jpg",
     "category": "Spices",
     "maxQuantity": 5
+  },
+  {
+    "id": 107,
+    "name": "Sompu / Saunf (Big) ",
+    "value": "50gm",
+    "image": "assets/images/sompu.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 108,
+    "name": "Vendhiyam / Methi / Fenugreek ",
+    "value": "50gm",
+    "image": "assets/images/methi.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 109,
+    "name": "Red Chilli",
+    "value": "100gm",
+    "image": "assets/images/dry_red_chilli_100.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 110,
+    "name": "Red Chilli",
+    "value": "200gm",
+    "image": "assets/images/dry_red_chilli_200.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 111,
+    "name": "Corainder Seeds / Dhaniya",
+    "value": "100gm",
+    "image": "assets/images/dhania_100.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 112,
+    "name": "Corainder Seeds / Dhaniya",
+    "value": "200gm",
+    "image": "assets/images/dhania_200.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 113,
+    "name": "Black Pepper",
+    "value": "100gm",
+    "image": "assets/images/pepper.jpg",
+    "category": "Spices",
+    "maxQuantity": 5
+  },
+  {
+    "id": 201,
+    "name": "Toor Dal / Thuvaram Paruppu",
+    "value": "500gm",
+    "image": "assets/images/udhaiyam.jpg",
+    "category": "Dals",
+    "maxQuantity": 5
+  },
+  {
+    "id": 202,
+    "name": "Toor Dal / Thuvaram Paruppu",
+    "value": "1 kg",
+    "image": "assets/images/udhaiyam.jpg",
+    "category": "Dals",
+    "maxQuantity": 5
+  },
+  {
+    "id": 203,
+    "name": "Moong Dal / Payatham Paruppu",
+    "value": "500gm",
+    "image": "assets/images/udhaiyam.jpg",
+    "category": "Dals",
+    "maxQuantity": 5
+  },
+  {
+    "id": 204,
+    "name": "Moong Dal / Payatham Paruppu",
+    "value": "1 kg",
+    "image": "assets/images/udhaiyam.jpg",
+    "category": "Dals",
+    "maxQuantity": 5
+  },
+  {
+    "id": 205,
+    "name": "Orid Dal / Ulutham Paruppu",
+    "value": "500gm",
+    "image": "assets/images/udhaiyam.jpg",
+    "category": "Dals",
+    "maxQuantity": 5
+  },
+  {
+    "id": 206,
+    "name": "Orid Dal / Ulutham Paruppu",
+    "value": "1 kg",
+    "image": "assets/images/udhaiyam.jpg",
+    "category": "Dals",
+    "maxQuantity": 5
+  },
+  {
+    "id": 207,
+    "name": "Gram Dal / Kadalai Paruppu",
+    "value": "500gm",
+    "image": "assets/images/udhaiyam.jpg",
+    "category": "Dals",
+    "maxQuantity": 5
+  },
+  {
+    "id": 208,
+    "name": "Gram Dal / Kadalai Paruppu",
+    "value": "1 kg",
+    "image": "assets/images/udhaiyam.jpg",
+    "category": "Dals",
+    "maxQuantity": 5
+  },
+   {
+    "id": 301,
+    "name": "Naga Sooji Rava",
+    "value": "500gm",
+    "image": "assets/images/naga_500.jpg",
+    "category": "Flours",
+    "maxQuantity": 5
+  },
+    {
+    "id": 302,
+    "name": "Naga Sooji Rava",
+    "value": "1 kg",
+    "image": "assets/images/naga_1000.jpg",
+    "category": "Flours",
+    "maxQuantity": 5
+  },
+   {
+    "id": 303,
+    "name": "Wheat (Samba) Rava",
+    "value": "500gm",
+    "image": "assets/images/samba.jpg",
+    "category": "Flours",
+    "maxQuantity": 5
+  },
+    {
+    "id": 304,
+    "name": "Aashirvaad Atta",
+    "value": "1 kg",
+    "image": "assets/images/atta.jpg",
+    "category": "Flours",
+    "maxQuantity": 5
+  },
+    {
+    "id": 401,
+    "name": "Surf Excel Liquid",
+    "value": "1 Litre",
+    "image": "assets/images/surf_1.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+   {
+    "id": 402,
+    "name": "Surf Excel Liquid",
+    "value": "2 Litres",
+    "image": "assets/images/surf_2.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+  {
+    "id": 403,
+    "name": "Rin Detergent Powder",
+    "value": "1 kg",
+    "image": "assets/images/rin.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+   {
+    "id": 404,
+    "name": "Comfort",
+    "value": "2 Litres",
+    "image": "assets/images/comfort.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+   {
+    "id": 405,
+    "name": "Vim Liquid",
+    "value": "750ml",
+    "image": "assets/images/vim.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+   {
+    "id": 406,
+    "name": "Mysore Sandal Soap",
+    "value": "1 Box (3 Pieces)",
+    "image": "assets/images/mysore.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+   {
+    "id": 407,
+    "name": "Himalaya Soap",
+    "value": "1 Piece",
+    "image": "assets/images/himalaya.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+    {
+    "id": 408,
+    "name": "Tooth Paste",
+    "value": "Small (100gm)",
+    "image": "assets/images/paste.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+   {
+    "id": 409,
+    "name": "Tooth Paste",
+    "value": "Large (150gm)",
+    "image": "assets/images/paste.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+   {
+    "id": 601,
+    "name": "Fortune Basmati Rice",
+    "value": "1 kg",
+    "image": "assets/images/basmati.jpg",
+    "category": "Rice",
+    "maxQuantity": 5
+  },
+  {
+    "id": 602,
+    "name": "Sivaji Rice",
+    "value": "5 kg",
+    "image": "assets/images/sivaji.jpg",
+    "category": "Rice",
+    "maxQuantity": 5
+  },
+  {
+    "id": 701,
+    "name": "Deepam Oil",
+    "value": "500ml",
+    "image": "assets/images/deepam.jpg",
+    "category": "Pooja Needs",
+    "maxQuantity": 5
+  },
+   {
+    "id": 702,
+    "name": "Deepam Oil",
+    "value": "1 Litre",
+    "image": "assets/images/deepam.jpg",
+    "category": "Pooja Needs",
+    "maxQuantity": 5
   }
-  
 ]

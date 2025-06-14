@@ -26,6 +26,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
    this.productsService.getAllProducts().subscribe((data) => {
       this.products = data;
+      this.filteredProducts = data; // Initial load, display all products
     });
     // Initialize all quantities to 0
     this.products.forEach(product => {
