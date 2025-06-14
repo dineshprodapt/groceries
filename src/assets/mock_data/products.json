@@ -25,7 +25,7 @@
   },
   {
     "id": 104,
-    "name": "Jeeragam",
+    "name": "Jeeragam (Cumin)",
     "value": "100gm",
     "image": "assets/images/jeeragam.jpg",
     "category": "Spices",
@@ -57,7 +57,7 @@
   },
   {
     "id": 108,
-    "name": "Vendhiyam / Methi / Fenugreek ",
+    "name": "Vendhiyam / Methi ",
     "value": "50gm",
     "image": "assets/images/methi.jpg",
     "category": "Spices",
@@ -247,16 +247,8 @@
     "category": "Pulses",
     "maxQuantity": 5
   },
- {
-    "id": 310,
-    "name": "Rajma",
-    "value": "200gm",
-    "image": "assets/images/rajma.jpg",
-    "category": "Pulses",
-    "maxQuantity": 5
-  },
   {
-    "id": 311,
+    "id": 310,
     "name": "Green Peas",
     "value": "200gm",
     "image": "assets/images/green_peas.jpg",
@@ -264,8 +256,16 @@
     "maxQuantity": 5
   },
    {
+    "id": 311,
+    "name": "Rajma",
+    "value": "200gm",
+    "image": "assets/images/rajma.jpg",
+    "category": "Pulses",
+    "maxQuantity": 5
+  },
+   {
     "id": 312,
-    "name": "White Peas / Vellai Pattani",
+    "name": "White Peas",
     "value": "200gm",
     "image": "assets/images/white_peas.jpg",
     "category": "Pulses",
@@ -313,7 +313,7 @@
   },
    {
     "id": 403,
-    "name": "Wheat (Samba) Rava",
+    "name": "Samba Rava",
     "value": "500gm",
     "image": "assets/images/samba.jpg",
     "category": "Flours",
@@ -337,7 +337,7 @@
   },
    {
     "id": 406,
-    "name": "Besan Flour / Kadalai Maavu",
+    "name": "Besan / Kadalai Maavu",
     "value": "1 kg",
     "image": "assets/images/besan.jpg",
     "category": "Flours",
@@ -353,7 +353,7 @@
   },
   {
     "id": 408,
-    "name": "Kambu / Bajra Flour",
+    "name": "Kambu Flour",
     "value": "500gm",
     "image": "assets/images/ragi.jpg",
     "category": "Flours",
@@ -377,7 +377,7 @@
   },
   {
     "id": 502,
-    "name": "Sivaji Rice",
+    "name": "Sivaji Rice (VKR)",
     "value": "5 kg",
     "image": "assets/images/sivaji.jpg",
     "category": "Rice and Others",
@@ -385,7 +385,7 @@
   },
    {
     "id": 503,
-    "name": "Idly Rice",
+    "name": "Idly Rice (AKS)",
     "value": "5 kg",
     "image": "assets/images/idly_rice.jpg",
     "category": "Rice and Others",
@@ -409,6 +409,14 @@
   },
     {
     "id": 506,
+    "name": "Tata Rock Salt",
+    "value": "1 kg",
+    "image": "assets/images/rock_salt.jpg",
+    "category": "Rice and Others",
+    "maxQuantity": 5
+  },
+    {
+    "id": 507,
     "name": "Nescafe Coffee Powder",
     "value": "45gm",
     "image": "assets/images/coffee.jpg",
@@ -423,17 +431,10 @@
     "category": "Rice and Others",
     "maxQuantity": 5
   },
-  {
-    "id": 508,
-    "name": "Tata Rock Salt",
-    "value": "1 kg",
-    "image": "assets/images/rock_salt.jpg",
-    "category": "Rice and Others",
-    "maxQuantity": 5
-  },
+
    {
     "id": 509,
-    "name": "Tata Crystal Salt / Kal Uppu",
+    "name": "Crystal Salt / Kal Uppu",
     "value": "1 kg",
     "image": "assets/images/crystal_salt.jpg",
     "category": "Rice and Others",
@@ -466,7 +467,7 @@
   },
     {
     "id": 513,
-    "name": "Paneer (Milky Mist)",
+    "name": "Paneer",
     "value": "200gm",
     "image": "assets/images/paneer.jpg",
     "category": "Rice and Others",
@@ -506,7 +507,7 @@
   },
      {
     "id": 604,
-    "name": "Walnuts (Whole)",
+    "name": "Walnuts",
     "value": "500gm",
     "image": "assets/images/badam.jpg",
     "category": "Dry Fruits",
@@ -522,7 +523,7 @@
   },
   {
     "id": 606,
-    "name": "Pista (Only Kernals)",
+    "name": "Pista (Kernals)",
     "value": "500gm",
     "image": "assets/images/pista.jpg",
     "category": "Dry Fruits",
@@ -570,7 +571,7 @@
   },
   {
     "id": 703,
-    "name": "Rin Detergent Powder",
+    "name": "Rin Powder",
     "value": "1 kg",
     "image": "assets/images/rin.jpg",
     "category": "Cleaning",
@@ -584,24 +585,17 @@
     "category": "Cleaning",
     "maxQuantity": 5
   },
+
    {
     "id": 705,
-    "name": "Vim Liquid",
-    "value": "750ml",
-    "image": "assets/images/vim.jpg",
-    "category": "Cleaning",
-    "maxQuantity": 5
-  },
-   {
-    "id": 706,
     "name": "Mysore Sandal Soap",
-    "value": "1 Box (3 Pieces)",
+    "value": "1 Box",
     "image": "assets/images/mysore.jpg",
     "category": "Cleaning",
     "maxQuantity": 5
   },
    {
-    "id": 707,
+    "id": 706,
     "name": "Himalaya Soap",
     "value": "1 Piece",
     "image": "assets/images/himalaya.jpg",
@@ -609,9 +603,17 @@
     "maxQuantity": 5
   },
     {
+    "id": 707,
+    "name": "Vim Liquid",
+    "value": "750ml",
+    "image": "assets/images/vim.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+    {
     "id": 708,
     "name": "Tooth Paste",
-    "value": "Small (100gm)",
+    "value": "100gm",
     "image": "assets/images/paste.jpg",
     "category": "Cleaning",
     "maxQuantity": 5
@@ -619,14 +621,14 @@
    {
     "id": 709,
     "name": "Tooth Paste",
-    "value": "Large (150gm)",
+    "value": "150gm",
     "image": "assets/images/paste.jpg",
     "category": "Cleaning",
     "maxQuantity": 5
   },
     {
     "id": 710,
-    "name": "Tooth Brush (Sensodyne Soft)",
+    "name": "Tooth Brush",
     "value": "Pack of 3",
     "image": "assets/images/brush.jpg",
     "category": "Cleaning",
@@ -634,7 +636,7 @@
   },
    {
     "id": 711,
-    "name": "Georej Air Pocket",
+    "name": "Georej Air",
     "value": "Pack of 3",
     "image": "assets/images/air.jpg",
     "category": "Cleaning",
@@ -658,6 +660,14 @@
   },
    {
     "id": 714,
+    "name": "Colin Liquid",
+    "value": "500ml",
+    "image": "assets/images/colin.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+   {
+    "id": 715,
     "name": "Harpic Bathroom Cleaner",
     "value": "1 Litre",
     "image": "assets/images/harpic_1.jpg",
@@ -665,21 +675,14 @@
     "maxQuantity": 5
   },
    {
-    "id": 715,
+    "id": 716,
     "name": "Harpic Toilet Cleaner",
     "value": "1 Litre",
     "image": "assets/images/harpic_2.jpg",
     "category": "Cleaning",
     "maxQuantity": 5
   },
-   {
-    "id": 716,
-    "name": "Colin Liquid",
-    "value": "500ml",
-    "image": "assets/images/colin.jpg",
-    "category": "Cleaning",
-    "maxQuantity": 5
-  },
+
   {
     "id": 801,
     "name": "Deepam Oil",
