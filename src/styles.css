@@ -44,7 +44,6 @@ button {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 button {
@@ -83,18 +82,37 @@ button {
 
 /* Header styles */
 header {
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px 0;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200; /* Higher than category nav */
+  background-color: white;
+  margin: 0px 20px;
+}
+
+/* Main content area */
+main {
+  position: relative;
+  z-index: 50;
+  
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 60px; /* Fixed height */
+}
+
+@media (max-width: 767px) {
+  header .container {
+    height: 56px;
+  }
+}
+
+@media (min-width: 992px) {
+  header .container {
+    height: 70px;
+  }
 }
 
 header h1 {
@@ -141,4 +159,14 @@ header h1 {
     flex-direction: column;
     gap: 10px;
   }
+}
+
+.header {
+  position: sticky;
+  top: 80px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

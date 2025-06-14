@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { Product } from '../product.model';
 
@@ -9,7 +9,10 @@ import { Product } from '../product.model';
 })
 export class CategoryNavComponent implements OnInit {
   categories: string[] = [];
+  showLeftIndicator = false;
+  showRightIndicator = false;
   products: Product[] = [];
+  @ViewChild('categoryNav') categoryNav!: ElementRef;
   @Output() categorySelected = new EventEmitter<string>();
   @Input() activeCategory: string = 'all';
 
@@ -23,7 +26,41 @@ export class CategoryNavComponent implements OnInit {
     
   }
 
+  ngAfterViewInit(): void {
+    this.checkScrollIndicators();
+    setTimeout(() => this.checkScrollIndicators(), 300); // Check after render
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.checkScrollIndicators();
+  }
+
+  onScroll(): void {
+    this.checkScrollIndicators();
+  }
+
+  checkScrollIndicators(): void {
+    const element = this.categoryNav.nativeElement;
+    this.showLeftIndicator = element.scrollLeft > 10;
+    this.showRightIndicator = element.scrollLeft < (element.scrollWidth - element.clientWidth - 10);
+  }
+
   selectCategory(category: string) {
     this.categorySelected.emit(category);
+     this.scrollToCategory(category);
+  }
+   scrollToCategory(category: string): void {
+    const index = category === 'all' ? 0 : this.categories.indexOf(category) + 1;
+    const element = this.categoryNav.nativeElement;
+    const items = element.querySelectorAll('li');
+    
+    if (items[index]) {
+      items[index].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
   }
 }

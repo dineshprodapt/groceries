@@ -1,4 +1,24 @@
-<nav class="category-nav">
+<div class="category-nav-container">
+  <div class="scroll-indicator left" [class.visible]="showLeftIndicator">
+    <span>‹</span>
+  </div>
+  
+  <nav #categoryNav class="category-nav" (scroll)="onScroll()">
+    <ul>
+      <li>
+        <a (click)="selectCategory('all')" [class.active]="activeCategory === 'all'">All</a>
+      </li>
+      <li *ngFor="let category of categories">
+        <a (click)="selectCategory(category)" [class.active]="activeCategory === category">{{category}}</a>
+      </li>
+    </ul>
+  </nav>
+  
+  <div class="scroll-indicator right" [class.visible]="showRightIndicator">
+    <span>›</span>
+  </div>
+</div>
+<!-- <nav class="category-nav">
   <ul>
     <li>
         <a 
@@ -16,4 +36,4 @@
         </a>
     </li>
   </ul>
-</nav>
+</nav> -->
