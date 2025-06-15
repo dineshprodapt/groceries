@@ -70,14 +70,16 @@ export class ProductListComponent implements OnInit {
   }
   
    checkoutAll(): void {
-    this.filteredProducts.forEach(product => {
-      const quantity = this.selectedQuantities[product.id];
-      if (quantity > 0) {
-        this.cartService.addToCart(product, quantity);
-        this.router.navigate(['/cart']);
-        this.selectedQuantities[product.id] = 0;
+      if (confirm('You have added '+ this.getSelectedCount() + ' products to the cart, do you want to checkout now?')) {
+        this.filteredProducts.forEach(product => {
+          const quantity = this.selectedQuantities[product.id];
+          if (quantity > 0) {
+            this.cartService.addToCart(product, quantity);
+            this.router.navigate(['/cart']);
+            this.selectedQuantities[product.id] = 0;
+          }
+        });
       }
-    });
   }
 
 //  checkoutAll(): void {

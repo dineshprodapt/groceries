@@ -64,14 +64,14 @@ validateNumberInput(event: KeyboardEvent): void {
   }
 
   clearCart(): void {
-    if (confirm('Hey Bharu! Are you sure you want to remove the products from your cart ?')) {
+    if (confirm('Are you sure you want to remove the products from your cart ?')) {
       this.cartService.clearCart();
       this.loadCartItems();
     }
   }
 
   sendToDinesh(): void { 
-     if (confirm('Hey Bharu! Can I send the product list to Dinesh ?')) {
+     if (confirm('Can I send the product list to Dinesh ?')) {
       // Here you can implement the logic to send the cart items to Dinesh
       // For now, we will just clear the cart
       this.cartService.clearCart();
