@@ -65,7 +65,7 @@
   },
   {
     "id": 109,
-    "name": "Red Chilli",
+    "name": "Red Chilli (Stem)",
     "value": "100gm",
     "image": "assets/images/dry_red_chilli_100.jpg",
     "category": "Spices",
@@ -73,7 +73,7 @@
   },
   {
     "id": 110,
-    "name": "Red Chilli",
+    "name": "Red Chilli (Stem)",
     "value": "200gm",
     "image": "assets/images/dry_red_chilli_200.jpg",
     "category": "Spices",
@@ -81,7 +81,7 @@
   },
   {
     "id": 111,
-    "name": "Corainder Seeds / Dhaniya",
+    "name": "Corainder / Dhaniya",
     "value": "100gm",
     "image": "assets/images/dhania_100.jpg",
     "category": "Spices",
@@ -89,7 +89,7 @@
   },
   {
     "id": 112,
-    "name": "Corainder Seeds / Dhaniya",
+    "name": "Corainder / Dhaniya",
     "value": "200gm",
     "image": "assets/images/dhania_200.jpg",
     "category": "Spices",

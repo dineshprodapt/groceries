@@ -5,14 +5,15 @@
   <div class="product-details">
     <h3>{{product.name}}</h3>
     <p class="price">{{product.value}}</p>
-    <div class="quantity-selector">
-      <select 
-        [value]="selectedQuantity"
-        (change)="onQuantityChange($event)">
-        <option *ngFor="let qty of quantityOptions" [value]="qty">
-          {{qty === 0 ? 'Select quantity' : qty}}
-        </option>
-      </select>
+    
+    <div class="quantity-selector" *ngIf="selectedQuantity > 0; else addButton">
+      <button class="quantity-btn minus" (click)="decrement()">−</button>
+      <span class="quantity">{{selectedQuantity}}</span>
+      <button class="quantity-btn plus" (click)="increment()">+</button>
     </div>
+    
+    <ng-template #addButton>
+      <button class="add-btn" (click)="addToCart()">Add</button>
+    </ng-template>
   </div>
 </div>

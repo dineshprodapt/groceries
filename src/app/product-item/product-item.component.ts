@@ -8,9 +8,8 @@ import { Product } from '../product.model';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product!: Product;
-  @Input() selectedQuantity!: number;
+  @Input() selectedQuantity: number = 0;
   @Output() quantityChanged = new EventEmitter<number>();
-  @Output() addToCart = new EventEmitter<Product>();
   quantityOptions: number[] = [];
   quantity: number = 1;
 
@@ -19,8 +18,24 @@ export class ProductItemComponent implements OnInit {
     this.quantityOptions = Array.from({length: this.product.maxQuantity + 1}, (_, i) => i);
   }
 
-  onAddToCart(): void {
-    this.addToCart.emit(this.product);
+  addToCart() {
+    //this.addToCart.emit(this.product);
+     this.selectedQuantity = 1;
+    this.quantityChanged.emit(this.selectedQuantity);
+  }
+
+  increment() {
+    if (this.selectedQuantity < this.product.maxQuantity) {
+      this.selectedQuantity++;
+      this.quantityChanged.emit(this.selectedQuantity);
+    }
+  }
+
+  decrement() {
+    if (this.selectedQuantity > 0) {
+      this.selectedQuantity--;
+      this.quantityChanged.emit(this.selectedQuantity);
+    }
   }
 
    onQuantityChange(event: Event) {

@@ -90,9 +90,14 @@ export class ProductListComponent implements OnInit {
 //     });
 //   }
 
-  onQuantityChange(productId: number, quantity: number) {
-    this.selectedQuantities[productId] = quantity;
+ onQuantityChange(productId: number, quantity: number) {
+  this.selectedQuantities[productId] = quantity;
+  // If quantity reaches 0, you might want to handle it specially
+  if (quantity === 0) {
+    // Optional: Remove from selectedQuantities
+    delete this.selectedQuantities[productId];
   }
+}
 
   getSelectedCount(): number {
    // console.log("selectedQuantities", this.selectedQuantities);
