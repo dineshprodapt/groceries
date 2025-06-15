@@ -249,7 +249,7 @@
   },
   {
     "id": 310,
-    "name": "Green Peas",
+    "name": "Green Peas / Pattani",
     "value": "200gm",
     "image": "assets/images/green_peas.jpg",
     "category": "Pulses",
@@ -313,7 +313,7 @@
   },
    {
     "id": 403,
-    "name": "Samba Rava",
+    "name": "Samba (Wheat) Rava",
     "value": "500gm",
     "image": "assets/images/samba.jpg",
     "category": "Flours",
@@ -337,7 +337,7 @@
   },
    {
     "id": 406,
-    "name": "Besan / Kadalai Maavu",
+    "name": "Kadalai Maavu",
     "value": "1 kg",
     "image": "assets/images/besan.jpg",
     "category": "Flours",
@@ -523,7 +523,7 @@
   },
   {
     "id": 606,
-    "name": "Pista (Kernals)",
+    "name": "Pista",
     "value": "500gm",
     "image": "assets/images/pista.jpg",
     "category": "Dry Fruits",
@@ -660,7 +660,7 @@
   },
    {
     "id": 714,
-    "name": "Colin Liquid",
+    "name": "Colin Cleaning Liquid",
     "value": "500ml",
     "image": "assets/images/colin.jpg",
     "category": "Cleaning",
@@ -679,6 +679,14 @@
     "name": "Harpic Toilet Cleaner",
     "value": "1 Litre",
     "image": "assets/images/harpic_2.jpg",
+    "category": "Cleaning",
+    "maxQuantity": 5
+  },
+    {
+    "id": 717,
+    "name": "Navratna Ayurvedic Oil",
+    "value": "200ml",
+    "image": "assets/images/navrathna.jpg",
     "category": "Cleaning",
     "maxQuantity": 5
   },
