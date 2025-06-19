@@ -11,38 +11,39 @@
     <div class="cart-items">
       <div class="cart-item" *ngFor="let item of cartItems">
         <div class="item-image">
-          <img [src]="item.product.image" [alt]="item.product.name">
+          <img [src]="item.image" [alt]="item.name">
         </div>
         
         <div class="item-details">
-          <h3>{{item.product.name}}</h3>
-          <!-- <p class="price">{{(item.product.value)}}</p> -->
+          <h3>{{item.name}}</h3>
+          <!-- <p class="price">{{(item.value)}}</p> -->
           
           <div class="mobile-quantity-control">
-            <button class="quantity-btn minus" (click)="updateQuantity(item.product.id, item.quantity - 1)">−</button>
+            <button class="quantity-btn minus" (click)="updateQuantity(item.id, item.quantity - 1)">−</button>
            <!-- <input type="number" min="1" [value]="item.quantity" 
-              (change)="updateQuantity(item.product.id, $any($event.target).value)"> -->
+              (change)="updateQuantity(item.id, $any($event.target).value)"> -->
                 <input #qtyInput
                     type="number" 
                     min="1" 
-                    [max]="item.product.maxQuantity || 99"
+                    [max]="item.maxQuantity || 99"
                     [value]="item.quantity"
-                    (change)="updateQuantity(item.product.id, qtyInput.value)"
+                    (change)="updateQuantity(item.id, qtyInput.value)"
                     (keydown)="validateNumberInput($event)">
+
                <button class="quantity-btn plus" 
-                    (click)="updateQuantity(item.product.id, item.quantity + 1)"
-                    [disabled]="item.quantity >= (item.product.maxQuantity || 99)">+</button>
+                    (click)="updateQuantity(item.id, item.quantity + 1)"
+                    [disabled]="item.quantity >= (item.maxQuantity || 99)">+</button>
           </div>
           
           <div class="item-actions">
-            <button class="remove-item" (click)="removeFromCart(item.product.id)">
+            <button class="remove-item" (click)="removeFromCart(item.id)">
               Remove
             </button>
           </div>
         </div>
         
         <div class="item-total">
-          {{(item.product.value)}}
+          {{(item.value)}}
         </div>
       </div>
     </div>
@@ -83,21 +84,21 @@
   <div *ngIf="cartItems.length > 0">
     <div class="cart-item" *ngFor="let item of cartItems">
       <div class="item-image">
-        <img [src]="item.product.image" [alt]="item.product.name">
+        <img [src]="item.image" [alt]="item.name">
       </div>
       <div class="item-details">
-        <h3>{{item.product.name}}</h3>
+        <h3>{{item.name}}</h3>
       </div>
       <div class="item-quantity">
         <input 
           type="number" 
           min="1" 
           [value]="item.quantity" 
-          (change)="updateQuantity(item.product.id, $event)">
+          (change)="updateQuantity(item.id, $event)">
       </div>
 
       <div class="item-remove">
-        <button (click)="removeItem(item.product.id)">×</button>
+        <button (click)="removeItem(item.id)">×</button>
       </div>
     </div>
     

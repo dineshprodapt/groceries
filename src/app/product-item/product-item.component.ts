@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Product } from '../product.model';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -13,6 +14,7 @@ export class ProductItemComponent implements OnInit {
   quantityOptions: number[] = [];
   quantity: number = 1;
 
+  constructor(private cartService: CartService) { } 
    ngOnInit() {
     // Create quantity options from 0 to maxQuantity
     this.quantityOptions = Array.from({length: this.product.maxQuantity + 1}, (_, i) => i);
@@ -20,6 +22,8 @@ export class ProductItemComponent implements OnInit {
 
   addToCart() {
     //this.addToCart.emit(this.product);
+    this.cartService.addToCart(this.product, this.selectedQuantity);
+    console.log("Product added to cart:", this.product);
      this.selectedQuantity = 1;
     this.quantityChanged.emit(this.selectedQuantity);
   }

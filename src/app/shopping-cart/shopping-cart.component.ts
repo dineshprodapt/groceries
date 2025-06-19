@@ -8,7 +8,9 @@ import { Product } from '../product.model';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit, OnDestroy {
-  cartItems: {product: Product, quantity: number}[] = [];
+ // cartItems: {product: Product, quantity: number}[] = [];
+  cartItems: Product[] = [];
+
   loadingItemId: number | null = null;
 
   constructor(private cartService: CartService) { }
@@ -25,7 +27,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   }
 
   loadCartItems(): void {
-    this.cartItems = this.cartService.getCartItems();
+    this.cartItems = this.cartService.getCartItems().map(item => item.product);
   }
 
 
@@ -37,13 +39,15 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     this.loadCartItems(); // Reset to current value
     return;
   }
-
-  this.loadingItemId = productId;
-   setTimeout(() => {
-      this.cartService.updateQuantity(productId, quantity);
-      this.loadCartItems();
-      this.loadingItemId = null;
-  }, 300); // Simulate network delay
+  else {
+    this.cartService.updateQuantity(productId, quantity);
+    this.cartItems.forEach(item => {
+      if (item.id === productId) {
+        item.quantity = quantity; // Update the quantity in the cartItems array
+      }
+    });
+  }
+  console.log("cartItems", this.cartItems);
 }
 
 // Prevent invalid key inputs
@@ -73,12 +77,34 @@ validateNumberInput(event: KeyboardEvent): void {
   sendToDinesh(): void { 
      if (confirm('Can I send the product list to Dinesh ?')) {
       // Here you can implement the logic to send the cart items to Dinesh
-      // For now, we will just clear the cart
-      this.cartService.clearCart();
       this.loadCartItems();
-      alert('Products sent to Dinesh successfully!');
-      // Optionally, you can redirect to a different page or show a success message 
+      this.proceedToWhatsAppCheckout();
     }
+  }
+
+  proceedToWhatsAppCheckout() {
+    const phoneNumber = '918939885606'; // Replace with your WhatsApp number
+    const message = this.generateWhatsAppMessage();
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+  }
+
+  private generateWhatsAppMessage(): string {
+    var date = new Date();
+    var monthName = date.toLocaleString('default', { month: 'long' });
+    var year = date.getFullYear();
+
+    let message = '*** 🛒 Groceries Order Details : ' +monthName +' - '+year+ ' ***'+' \n\n';
+    this.cartItems.forEach(item => {
+      message += ` ${item.name} - ${item.quantity} x ${item.value}\n`;
+    });
+    
+    message += `\n Total Products : ${this.cartItems.length}\n`;
+    message += `\nPlease order these products for this month.`;
+    
+    return message;
   }
 
   getTotalPrice(): number {

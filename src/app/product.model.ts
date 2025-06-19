@@ -4,5 +4,11 @@ export interface Product {
   value: string;
   image: string;
   category: string;
-  maxQuantity: number; // Add this line
+  maxQuantity: number; 
+  quantity: number;
 }
+
+// export interface cartItems {
+//   product: Product;
+//   quantity: number;
+// }

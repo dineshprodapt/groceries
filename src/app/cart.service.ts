@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-private cartItems: {product: Product, quantity: number}[] = [];
-  private cartSubject = new BehaviorSubject<{product: Product, quantity: number}[]>(this.cartItems);
+cartItems: {product: Product, quantity: number}[] = [];
+  private cartSubject = new BehaviorSubject<{ product: Product, quantity: number }[]>(this.cartItems);
   public sharedData = new BehaviorSubject<any>('');
   currentData = this.sharedData.asObservable();
 
@@ -22,15 +22,15 @@ private cartItems: {product: Product, quantity: number}[] = [];
   }
 
  // Update methods to emit new values
-  addToCart(product: Product, quantity: number = 1): void {
-    const existingItem = this.cartItems.find(item => item.product.id === product.id);
+  addToCart(cartItem: Product, quantity: number): void {
+    console.log("addtpcart");
+    const existingItem = this.cartItems.find(item => item.product.id === cartItem.id);
     
     if (existingItem) {
       existingItem.quantity += quantity;
     } else {
-      this.cartItems.push({product, quantity});
+      this.cartItems.push({ product: cartItem, quantity: quantity });
     }
-    console.log("cart", this.cartItems);
     this.cartSubject.next([...this.cartItems]); // Emit new value
   }
 
@@ -51,10 +51,9 @@ private cartItems: {product: Product, quantity: number}[] = [];
     }
   }
 
-  getCartItems(): {product: Product, quantity: number}[] {
+  getCartItems(): {product: Product}[] {
     return this.cartItems;
   }
-
   getTotalItems(): number {
     return this.cartItems.reduce((total, item) => total + item.quantity, 0);
   }

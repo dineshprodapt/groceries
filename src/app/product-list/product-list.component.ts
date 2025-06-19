@@ -18,7 +18,8 @@ export class ProductListComponent implements OnInit {
   selectedQuantities: {[productId: number]: number} = {};
   activeCategory: string = 'all';
   filteredProducts: Product[] = [];
-
+  finalQuantity: number = 0;
+  
   constructor(
     private productsService: ProductsService,
     private cartService: CartService,
@@ -65,20 +66,54 @@ export class ProductListComponent implements OnInit {
   //   }
   // }
 
-  addToCart(product: Product): void {
-    this.cartService.addToCart(product);
-  }
   
    checkoutAll(): void {
       if (confirm('You have added '+ this.getSelectedCount() + ' products to the cart, do you want to checkout now?')) {
-        this.filteredProducts.forEach(product => {
-          const quantity = this.selectedQuantities[product.id];
-          if (quantity > 0) {
-            this.cartService.addToCart(product, quantity);
-            this.router.navigate(['/cart']);
-            this.selectedQuantities[product.id] = 0;
-          }
+        console.log("products", this.products);
+        console.log("selected products", this.cartService.getCartItems());
+        console.log("selectedQuantities", this.selectedQuantities);
+        let cartItems: Product[] = this.cartService.getCartItems().map(item => item.product);
+        console.log("cartItems", cartItems);
+        // Filter products based on selected quantities
+        cartItems = cartItems.filter(item => {
+          this.finalQuantity = this.selectedQuantities[item.id];
+          item.quantity = this.finalQuantity || 1; // Set quantity to selected or default to 1
+          return item;
+         // delete item.quantity;
+         // return this.finalQuantity > 0; // Only keep items with quantity greater than 0
         });
+         this.router.navigate(['/cart']);
+        // const updatedObj = Object.fromEntries(
+        //   Object.entries(cartItems).filter(([key]) => key !== 'age')
+        // );
+      
+        console.log("filtered cart items", cartItems);
+        //  this.cartService.addToCart(cartItems, this.finalQuantity);
+      //  const filteredProducts = this.cartService.getCartItems().forEach(items => {
+      //     console.log("item", items);
+      //     if(items.product.id === this.selectedQuantities[items.product.id]) {
+      //       // items.product.
+      //     });
+      //      items.product.id = this.selectedQuantities[items.product.id];
+      //   })
+      //   // const filteredProducts = this.products.filter(product =>  {
+      //   //   product.id === this.selectedQuantities[product.id];
+      //   //   console.log("product.id", product.id);
+      //   //   var quantity = this.selectedQuantities[product.id];
+      //   // });
+      //   console.log("filteredProducts 1", filteredProducts);
+        //  this.cartService.addToCart(product, this.selectedQuantities[product.id] || 1);
+        //     this.router.navigate(['/cart']);
+        //     this.selectedQuantities[product.id] = 0;
+        // this.products.filter(product => {
+        //   const quantity = this.selectedQuantities[product.id];
+        //   console.log("quantity", quantity);
+        //   if (quantity > 0) {
+        //     this.cartService.addToCart(product, this.selectedQuantities[product.id] || 1);
+        //     this.router.navigate(['/cart']);
+        //     this.selectedQuantities[product.id] = 0;
+        //   }
+        // });
       }
   }
 
