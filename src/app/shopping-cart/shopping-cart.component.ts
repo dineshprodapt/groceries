@@ -17,6 +17,12 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadCartItems();
+     window.scrollTo({top: 0, behavior: 'smooth'});
+      window.addEventListener("beforeunload", function (e) {
+        var confirmationMessage = "\o/";
+        console.log("cond");
+        return confirmationMessage; // Modern browsers
+    });
   }
 
   ngOnDestroy(): void {

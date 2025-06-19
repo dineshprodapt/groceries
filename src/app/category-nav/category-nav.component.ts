@@ -54,13 +54,15 @@ export class CategoryNavComponent implements OnInit {
     const index = category === 'all' ? 0 : this.categories.indexOf(category) + 1;
     const element = this.categoryNav.nativeElement;
     const items = element.querySelectorAll('li');
-    
+   
     if (items[index]) {
       items[index].scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',
         inline: 'center'
       });
+      // Scroll to the top of the page after selecting a category
+       window.scrollTo({top: 0, behavior: 'smooth'})
     }
   }
 }
