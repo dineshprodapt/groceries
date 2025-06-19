@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Product } from '../product.model';
 
@@ -15,12 +15,19 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   constructor(private cartService: CartService) { }
 
+  @HostListener("window:beforeunload", ["$event"]) unloadHandler(event: Event) {
+      console.log("unload event triggered");   
+      confirm("Are you sure you want to exit ?");
+      event.preventDefault();
+  }
   ngOnInit(): void {
     this.loadCartItems();
      window.scrollTo({top: 0, behavior: 'smooth'});
+     
       window.addEventListener("beforeunload", function (e) {
+         e.preventDefault();
         var confirmationMessage = "\o/";
-        console.log("cond");
+        alert("Are you sure you want to exit ?");
         return confirmationMessage; // Modern browsers
     });
   }
