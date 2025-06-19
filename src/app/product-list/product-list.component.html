@@ -4,7 +4,7 @@
       <div>Total Cart items ({{getSelectedCount()}})
         <button 
           class="glitter-btn" 
-          [disabled]="getSelectedCount() === 0" 
+            *ngIf="getSelectedCount() > 0"
           (click)="checkoutAll()">
           Checkout
           <!-- <span class="glitter"></span> -->
