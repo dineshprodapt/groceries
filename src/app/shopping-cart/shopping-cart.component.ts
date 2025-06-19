@@ -83,7 +83,7 @@ validateNumberInput(event: KeyboardEvent): void {
   }
 
   proceedToWhatsAppCheckout() {
-    const phoneNumber = '918939885606'; // Replace with your WhatsApp number
+    const phoneNumber = '918148274881'; // Replace with your WhatsApp number
     const message = this.generateWhatsAppMessage();
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -96,12 +96,12 @@ validateNumberInput(event: KeyboardEvent): void {
     var monthName = date.toLocaleString('default', { month: 'long' });
     var year = date.getFullYear();
 
-    let message = `🛒 Groceries Order : *${monthName} ${year}*🛒 \n\n `;
+    let message = `🛒 Groceries Order : *${monthName} ${year}* \n\n `;
     this.cartItems.forEach(item => {
       message += `• ${item.name}  -  *${item.quantity}* × ₹${item.value} \n`;
     });
 
-    message += `\n📦 *Total Products*: *${this.cartItems.length}*\n`;
+    message += `\n📦 *Total Products* : *${this.cartItems.length}*\n`;
     message += `\n Please order these products for this month. Thank you! 🙏\n\n`;
     
     return message;
