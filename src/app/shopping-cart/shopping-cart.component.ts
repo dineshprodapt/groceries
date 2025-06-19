@@ -16,20 +16,15 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   constructor(private cartService: CartService) { }
 
   @HostListener("window:beforeunload", ["$event"]) unloadHandler(event: Event) {
-      console.log("unload event triggered");   
-      confirm("Are you sure you want to exit ?");
+    // Avoid page refresh accidentally clearing the cart
+    // This will prevent the default action of the event, which is to refresh the page
       event.preventDefault();
   }
+
   ngOnInit(): void {
     this.loadCartItems();
      window.scrollTo({top: 0, behavior: 'smooth'});
-     
-      window.addEventListener("beforeunload", function (e) {
-         e.preventDefault();
-        var confirmationMessage = "\o/";
-        alert("Are you sure you want to exit ?");
-        return confirmationMessage; // Modern browsers
-    });
+
   }
 
   ngOnDestroy(): void {
