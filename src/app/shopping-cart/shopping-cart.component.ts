@@ -96,13 +96,13 @@ validateNumberInput(event: KeyboardEvent): void {
     var monthName = date.toLocaleString('default', { month: 'long' });
     var year = date.getFullYear();
 
-    let message = `🛒 Groceries Order Details : *${monthName} ${year}*🛒 \n\n `;
+    let message = `🛒 Groceries Order : *${monthName} ${year}*🛒 \n\n `;
     this.cartItems.forEach(item => {
-      message += `• ${item.name}  —  *${item.quantity}* × ₹${item.value} 🥦\n`;
+      message += `• ${item.name}  -  *${item.quantity}* × ₹${item.value} \n`;
     });
 
-    message += `\n📦 *Total Products*: *\u001b[31m${this.cartItems.length}\u001b[0m*\n`;
-    message += `\n🙏 Please order these products for this month.`;
+    message += `\n📦 *Total Products*: *${this.cartItems.length}*\n`;
+    message += `\n Please order these products for this month. Thank you! 🙏\n\n`;
     
     return message;
   }
