@@ -5,8 +5,9 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
+  { path: 'shopping', component: ProductListComponent },
   { path: 'cart', component: ShoppingCartComponent },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'shopping', pathMatch: 'full' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

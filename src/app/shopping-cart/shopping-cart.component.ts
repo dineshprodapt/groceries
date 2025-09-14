@@ -21,10 +21,13 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
       event.preventDefault();
   }
 
+  
+
   ngOnInit(): void {
     this.loadCartItems();
-     window.scrollTo({top: 0, behavior: 'smooth'});
-
+    setTimeout(() => {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }, 500);
   }
 
   ngOnDestroy(): void {
@@ -105,8 +108,22 @@ validateNumberInput(event: KeyboardEvent): void {
     var year = date.getFullYear();
 
     let message = `🛒 Groceries Order : *${monthName} ${year}* \n\n `;
+    // Group items by vendor
+    const vendors: { [vendor: string]: Product[] } = {};
     this.cartItems.forEach(item => {
+      if (!vendors[item.vendor]) {
+      vendors[item.vendor] = [];
+      }
+      vendors[item.vendor].push(item);
+    });
+
+    // Build message grouped by vendor
+    Object.keys(vendors).forEach(vendor => {
+      message += `🏷️ [${vendor}] \n`;
+      vendors[vendor].forEach(item => {
       message += `• ${item.name}  -  *${item.quantity}* × ₹${item.value} \n`;
+      });
+      message += '\n';
     });
 
     message += `\n📦 *Total Products* : *${this.cartItems.length}*\n`;

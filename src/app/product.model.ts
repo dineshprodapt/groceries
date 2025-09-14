@@ -6,6 +6,7 @@ export interface Product {
   category: string;
   maxQuantity: number; 
   quantity: number;
+  vendor: string;
 }
 
 // export interface cartItems {
