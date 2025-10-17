@@ -119,7 +119,9 @@ validateNumberInput(event: KeyboardEvent): void {
 
     // Build message grouped by vendor
     Object.keys(vendors).forEach(vendor => {
-      message += `🏷️ [${vendor}] \n`;
+      // Underline vendor name using combining low line, then bold it
+      const underlinedVendor = vendor.split('').map(ch => ch + '\u0332').join('');
+      message += `🏷️ *[${underlinedVendor}]* \n`;
       vendors[vendor].forEach(item => {
       message += `• ${item.name}  -  *${item.quantity}* × ₹${item.value} \n`;
       });
