@@ -333,6 +333,15 @@
     "vendor": "Big Basket"
   },
   {
+    "id": 316,
+    "name": "Soya Small",
+    "value": "100gm",
+    "image": "assets/images/soya.jpg",
+    "category": "Pulses",
+    "maxQuantity": 5,
+    "vendor": "Big Basket"
+  },
+  {
     "id": 401,
     "name": "Naga Sooji Rava",
     "value": "500gm",
@@ -361,9 +370,9 @@
   },
   {
     "id": 404,
-    "name": "Aashirvaad Atta",
+    "name": "Organic Tattva Atta",
     "value": "1 kg",
-    "image": "assets/images/atta.jpg",
+    "image": "assets/images/atta_2.jpg",
     "category": "Flours",
     "maxQuantity": 5,
     "vendor": "Amazon"
@@ -451,12 +460,12 @@
   },
   {
     "id": 505,
-    "name": "LG Asafoetida",
+    "name": "Pal Perungayam",
     "value": "100gm",
-    "image": "assets/images/lg.jpg",
+    "image": "assets/images/perungayam.jpg",
     "category": "Rice and Others",
     "maxQuantity": 5,
-    "vendor": "Amazon"
+    "vendor": "Outside"
   },
   {
     "id": 506,
@@ -722,7 +731,7 @@
   {
     "id": 711,
     "name": "Georej Air",
-    "value": "Pack of 3",
+    "value": "1 bottle",
     "image": "assets/images/air.jpg",
     "category": "Cleaning",
     "maxQuantity": 5,
@@ -757,24 +766,6 @@
   },
   {
     "id": 715,
-    "name": "Harpic Bathroom Cleaner",
-    "value": "1 Litre",
-    "image": "assets/images/harpic_1.jpg",
-    "category": "Cleaning",
-    "maxQuantity": 5,
-    "vendor": "Big Basket"
-  },
-  {
-    "id": 716,
-    "name": "Harpic Toilet Cleaner",
-    "value": "1 Litre",
-    "image": "assets/images/harpic_2.jpg",
-    "category": "Cleaning",
-    "maxQuantity": 5,
-    "vendor": "Big Basket"
-  },
-  {
-    "id": 717,
     "name": "Navratna Ayurvedic Oil",
     "value": "200ml",
     "image": "assets/images/navrathna.jpg",
@@ -783,7 +774,7 @@
     "vendor": "Amazon"
   },
    {
-    "id": 718,
+    "id": 716,
     "name": "Washing & Cooking Soda",
     "value": "10 Packets",
     "image": "assets/images/washing_soda.jpg",
