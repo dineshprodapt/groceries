@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting to groceries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // GitHub Pages serves this file for legacy URLs without a hash.
+    var base = '/groceries/';
+    var route = location.pathname.slice(base.length).replace(/\/$/, '');
+    if (location.pathname.indexOf(base) === 0 &&
+        ['cart', 'shopping', 'groceries/cart'].indexOf(route) !== -1) {
+      location.replace(base + '#/' + (route === 'groceries/cart' ? 'cart' : route) + location.search);
+    }
+  </script>
+</head>
+<body><p><a href="/groceries/">Return to groceries</a></p></body>
+</html>

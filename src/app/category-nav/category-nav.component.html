@@ -4,13 +4,13 @@
     <span>‹</span>
   </div>
   
-  <nav #categoryNav class="category-nav" (scroll)="onScroll()">
+  <nav #categoryNav class="category-nav" (scroll)="onScroll()" aria-label="Product categories">
     <ul>
       <li>
-        <a (click)="selectCategory('all')" [class.active]="activeCategory === 'all'">All</a>
+        <button type="button" (click)="selectCategory('all')" [class.active]="activeCategory === 'all'" [attr.aria-pressed]="activeCategory === 'all'">All</button>
       </li>
       <li *ngFor="let category of categories">
-        <a (click)="selectCategory(category)" [class.active]="activeCategory === category">{{category}}</a>
+        <button type="button" (click)="selectCategory(category)" [class.active]="activeCategory === category" [attr.aria-pressed]="activeCategory === category">{{category}}</button>
       </li>
     </ul>
   </nav>

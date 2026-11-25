@@ -1,4 +1,10 @@
 <div class="container">
+  <section class="hero" aria-label="A thank-you to My Wife">
+    <div class="eyebrow dedication">For My <span class="wife-name">Chellakutty Wife</span> <span class="with-love">with love</span></div>
+    <h1>You fill our home<br><span>with love.</span></h1>
+    <p>Thank you for all the little things you do, my love. You take care of so much. Let me make this part a little easier.</p>
+    <div class="hero-art" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M25 33h50l5 48H20l5-48Z M37 38V25a13 13 0 0 1 26 0v13"/><path d="M50 69 37 57c-9-9 4-20 13-10 9-10 22 1 13 10L50 69Z" fill="#ffc2d6" stroke-width="3"/></svg></div>
+  </section>
   <div class="header">
     <div class="cart-info">
       <div>Total Cart items ({{getSelectedCount()}})
@@ -16,6 +22,7 @@
   </div>
 
 
+  <div class="section-heading"><h2>{{activeCategory === 'all' ? 'Explore the essentials' : activeCategory}}</h2><p>A little of everything</p></div>
   <div class="product-grid">
     <app-product-item *ngFor="let product of filteredProducts" [product]="product"
       [selectedQuantity]="selectedQuantities[product.id]" (quantityChanged)="onQuantityChange(product.id, $event)">

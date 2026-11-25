@@ -1,191 +1,59 @@
-.loading {
-  display: flex;
-  justify-content: center;
-  padding: 50px;
+:host { display: block; }
+.hero .eyebrow.dedication { color: #ffd0df; }
+.wife-name {
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: .4px;
+  text-transform: none;
+  color: #ffc2d6;
 }
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid var(--primary-light);
-  border-top: 4px solid var(--primary-color);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .wife-name {
+    background: linear-gradient(110deg, #ffb6d0 15%, #ffe0b3 35%, #ffffff 48%, #ffe0b3 60%, #ffb6d0 80%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: wife-shimmer 4s ease-in-out infinite;
   }
 }
-
-.category-filter {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+.wife-name::after {
+  content: '\2726';
+  display: inline-block;
+  margin-left: 5px;
+  color: #ffe0b3;
+  font-size: 13px;
+  vertical-align: top;
+  animation: wife-sparkle 3s ease-in-out infinite;
 }
-
-.category-filter button {
-  padding: 8px 16px;
-  border-radius: 50px;
-  background-color: white;
-  border: 1px solid #ddd;
-  font-size: 0.9rem;
+@keyframes wife-shimmer { 0%, 100% { background-position: 100% 50%; } 50% { background-position: 0% 50%; } }
+@keyframes wife-sparkle { 0%, 100% { opacity: .5; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.1); } }
+@media(max-width: 600px) {
+  .wife-name { font-size: 18px; }
+  .with-love { display: block; }
 }
-
-.category-filter button.active {
-  background-color: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
+@media(prefers-reduced-motion: reduce) {
+  .wife-name, .wife-name::after { animation: none; }
 }
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 25px;
-  margin-top: 15px;
-  /* Add some space below fixed header */
-
-}
-
-.container {
-  padding-top: 0;
-  /* Remove top padding since we have fixed header */
-}
-
-.cart-info {
-  margin: 0 15px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-
-.cart-info div button {
-  font-weight: bold;
-  color: var(--primary-dark);
-  position: absolute;
-  right: 16px;
-  cursor: pointer;
-}
-
-.cart-info div button:disabled {
-  color: red;
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.add-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.add-btn:hover {
-  background-color: #45a049;
-}
-
-.quantity-selector {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.quantity-btn {
-  width: 30px;
-  height: 30px;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.quantity-btn:hover {
-  background-color: #e0e0e0;
-}
-
-.quantity-btn.plus {
-  color: #4CAF50;
-}
-
-.quantity-btn.minus {
-  color: #f44336;
-}
-
-.quantity {
-  min-width: 30px;
-  text-align: center;
-  font-weight: 500;
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 480px) {
-  .quantity-selector {
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  .add-btn {
-    padding: 8px;
-    font-size: 0.9rem;
-  }
-}
- .glitter-btn {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(90deg, #b6c99c, #9e9dc1, #e4f4c1, #bbe5ef);
-            background-size: 400% 400%;
-            color: #fff;
-            border: none;
-            padding: 10px 24px;
-            font-size: 16px;
-            border-radius: 30px;
-            cursor: pointer;
-            animation: gradientMove 2s linear infinite;
-            box-shadow: 0 4px 15px rgba(120, 115, 245, 0.2);
-            transition: transform 2s;
-          }
-          .glitter-btn:active {
-            transform: scale(0.97);
-          }
-          .glitter-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-          }
-          @keyframes gradientMove {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-          }
-          .glitter {
-            pointer-events: none;
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: repeating-linear-gradient(
-              120deg,
-              rgba(255,255,255,0.7) 0px,
-              rgba(255,255,255,0.7) 2px,
-              transparent 2px,
-              transparent 6px
-            );
-            mix-blend-mode: lighten;
-            opacity: 0.7;
-            animation: glitterMove 1.2s linear infinite;
-          }
-          @keyframes glitterMove {
-            0% {background-position: 0 0;}
-            100% {background-position: 60px 60px;}
-          }
+.hero { position: relative; overflow: hidden; isolation: isolate; padding: 36px 40px; background: #075b43; border-radius: 28px; color: #fff; margin-bottom: 26px; }
+.hero::before { content: ''; position: absolute; width: 310px; height: 310px; border: 55px solid #ffffff09; border-radius: 50%; right: -50px; top: -130px; z-index: -1; }
+.hero .eyebrow { color: #c6efb0; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.hero h1 { font-size: clamp(28px,4vw,44px); line-height: 1.15; font-weight: 800; letter-spacing: -1.5px; }
+.hero h1 span { color: #ffcf77; }
+.hero p { font-size: 14px; color: #d1e8dc; margin-top: 14px; max-width: 390px; }
+.hero-art { position: absolute; right: 55px; bottom: 23px; width: 150px; height: 150px; display: grid; place-items: center; background: #ffcb6a; border-radius: 50%; color: #075b43; box-shadow: 12px 12px 0 #ffffff0c; }
+.hero-art svg { width: 100px; height: 100px;  }
+.header { position: sticky; top: 0; z-index: 20; background: #f7f8f2f5; backdrop-filter: blur(16px); padding: 12px 0 8px; }
+.cart-info > div { display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 10px 16px; border-radius: 18px; background: #e5f1e5; color: #26553e; font-size: 14px; font-weight: 600; }
+.glitter-btn { margin-left: auto; background: #087f5b; color: #fff; padding: 12px 22px; min-height: 44px; border-radius: 13px; font-weight: 700; box-shadow: 0 4px 10px #087f5b20; }
+.glitter-btn:hover { background: #07513e; }
+.section-heading { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin: 22px 0 16px; }
+.section-heading h2 { font-size: 22px; font-weight: 800; letter-spacing: -.6px; }
+.section-heading p { font-size: 12px; color: #758174; }
+.product-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 18px; }
+@media(max-width: 1050px) { .product-grid { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+@media(max-width: 800px) { .product-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; } .hero-art { right: 28px; width: 125px; height: 125px; } .hero-art svg { width: 80px; } .hero { padding: 28px; } .hero p { max-width: 65%; } }
+@media(max-width: 600px) { .hero { padding: 26px 22px; border-radius: 24px; margin-bottom: 12px; } .hero h1 { font-size: 30px; max-width: 240px; } .hero .eyebrow { font-size: 9px; letter-spacing: 1.5px; } .hero p { font-size: 12px; max-width: calc(100% - 70px); } .hero-art { width: 72px; height: 72px; right: 12px; bottom: 18px; } .hero-art svg { width: 48px; height: 48px; } .cart-info > div { padding: 9px 12px; font-size: 12px; gap: 5px; } .glitter-btn { padding: 11px 15px; font-size: 12px; } .section-heading { margin: 17px 0 13px; } .section-heading h2 { font-size: 19px; } .section-heading p { font-size: 11px; } .product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; } }

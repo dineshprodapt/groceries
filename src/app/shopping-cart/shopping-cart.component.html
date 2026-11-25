@@ -1,5 +1,5 @@
 <div class="cart-container">
-  <h3>Your Cart</h3>
+  <div class="cart-heading"><span class="cart-eyebrow">A little closer to home</span><h3>Your Cart</h3><p>Your essentials, all in one happy basket.</p></div>
   
   <div *ngIf="cartItems.length === 0" class="empty-cart">
     <img src="assets/images/empty-cart.jpg" alt="Empty cart" class="empty-cart-icon">
@@ -16,6 +16,7 @@
         
         <div class="item-details">
           <h3>{{item.name}}</h3>
+          <div class="item-total">{{item.value}}</div>
           <!-- <p class="price">{{(item.value)}}</p> -->
           
           <div class="mobile-quantity-control">
@@ -42,9 +43,6 @@
           </div>
         </div>
         
-        <div class="item-total">
-          {{(item.value)}}
-        </div>
       </div>
     </div>
     

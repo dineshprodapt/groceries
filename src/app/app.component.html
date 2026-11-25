@@ -1,8 +1,14 @@
 <header>
-  <h3>Dinesh Home Needs</h3>
-
+  <div class="brand-bar">
+    <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-2 11H5L3 9Z M8 9l4-6 4 6 M9 13v3 M15 13v3"/></svg></span>
+    <div class="brand-copy"><h3><span class="brand-name">Dinesh Bharu</span> - Home Needs</h3><p>A little care for our home</p></div>
+    <span class="brand-note">Your everyday essentials</span>
+  </div>
 </header>
-
-<main>
-  <router-outlet></router-outlet>
-</main>
+<main><router-outlet></router-outlet></main>
+<button *ngIf="showScrollToTop" class="scroll-to-top" type="button"
+  aria-label="Scroll to top" title="Scroll to top" (click)="scrollToTop()">
+  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m6 11 6-6 6 6M12 5v14" />
+  </svg>
+</button>
