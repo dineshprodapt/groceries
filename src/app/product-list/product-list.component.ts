@@ -31,9 +31,8 @@ export class ProductListComponent implements OnInit {
       this.products = data;
       this.filteredProducts = data; // Initial load, display all products
     });
-    // Initialize all quantities to 0
-    this.products.forEach(product => {
-      this.selectedQuantities[product.id] = 0;
+    this.cartService.getCartItems().forEach(item => {
+      this.selectedQuantities[item.product.id] = item.quantity;
     });
   }
 
@@ -77,7 +76,7 @@ export class ProductListComponent implements OnInit {
         // Filter products based on selected quantities
         cartItems = cartItems.filter(item => {
           this.finalQuantity = this.selectedQuantities[item.id];
-          item.quantity = this.finalQuantity || 1; // Set quantity to selected or default to 1
+          this.cartService.updateQuantity(item.id, this.finalQuantity || item.quantity);
           return item;
          // delete item.quantity;
          // return this.finalQuantity > 0; // Only keep items with quantity greater than 0
@@ -128,6 +127,15 @@ export class ProductListComponent implements OnInit {
 //   }
 
  onQuantityChange(productId: number, quantity: number) {
+  const product = this.products.find(item => item.id === productId);
+  if (!product) return;
+  if (quantity === 0) {
+    this.cartService.removeFromCart(productId);
+  } else if (this.cartService.getCartItems().some(item => item.product.id === productId)) {
+    this.cartService.updateQuantity(productId, quantity);
+  } else {
+    this.cartService.addToCart(product, quantity);
+  }
   this.selectedQuantities[productId] = quantity;
   // If quantity reaches 0, you might want to handle it specially
   if (quantity === 0) {

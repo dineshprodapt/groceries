@@ -1,4 +1,4 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Product } from '../product.model';
 
@@ -15,11 +15,6 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   constructor(private cartService: CartService) { }
 
-  @HostListener("window:beforeunload", ["$event"]) unloadHandler(event: Event) {
-    // Avoid page refresh accidentally clearing the cart
-    // This will prevent the default action of the event, which is to refresh the page
-      event.preventDefault();
-  }
 
   
 
@@ -32,7 +27,6 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     // Cleanup if needed
-    this.cartService.clearCart();
     this.cartItems = [];
     this.loadingItemId = null;
   }

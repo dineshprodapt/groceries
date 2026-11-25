@@ -22,7 +22,6 @@ export class ProductItemComponent implements OnInit {
 
   addToCart() {
     //this.addToCart.emit(this.product);
-    this.cartService.addToCart(this.product, this.selectedQuantity);
     console.log("Product added to cart:", this.product);
      this.selectedQuantity = 1;
     this.quantityChanged.emit(this.selectedQuantity);
